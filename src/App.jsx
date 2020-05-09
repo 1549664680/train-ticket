@@ -1,32 +1,36 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component ,PureComponent,memo} from 'react';
 import './App.css';
-const About = lazy(() => import(/*webpackChunkName: "about"*/'./About.jsx'))
+class Foo extends PureComponent{
+  // shouldComponentUpdate(nextProps, nextState){
+  //   if(nextProps.name === this.props.name){
+  //     return false
+  //   }
+  //   return true
+  // }
+  render(){
+    console.log('foo render')
+    return null
+  }
+}
+// 无状态组件时，使用memo包裹
+//const Foo = memo(function Foo(props){
+//       console.log('foo render')
+//     return null
+// })
 class App extends Component {
   state = {
-    hasError:false,
-  }
-  // componentDidCatch(){
-  //   this.setState({
-  //     hasError:true,
-  //   })
-  // }
-  static getDerivedStateFromError(){
-    return {
-      hasError:true
+    count:0,
+    person:{
+      age:1
     }
   }
-  render() {
-    if(this.state.hasError){
-      return <div>error</div>
-    }
+  render(){
     return (
       <div>
-        <Suspense fallback={<div>loading...</div>}>
-          <About>
-          </About>
-        </Suspense>
+        <button onClick={()=>{this.setState({count:this.state.count+1})}}>add</button>
+        <Foo/>
       </div>
-    );
+    )
   }
 }
 
