@@ -76,6 +76,7 @@
       "react-app"
     ],
     "rules": {
+      "react/no-typos": "off"
     }
   },
   "husky": {

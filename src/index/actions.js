@@ -46,7 +46,7 @@ export function toggleHighSpeed() {
   };
 }
 
-export function showCitySelecotr(currentSelectingLeftCity) {
+export function showCitySelector(currentSelectingLeftCity) {
   return dispatch => {
     dispatch({
       type: ACTION_SET_IS_CITY_SELECTOR_VISIBLE,
