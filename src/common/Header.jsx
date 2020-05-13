@@ -20,7 +20,7 @@ export default function Header(props) {
     </div>
   );
 }
-Header.PropTypes = {
+Header.propTypes = {
   onBack: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired
 };
