@@ -9,7 +9,7 @@ export const ACTION_SET_IS_LOADING_CITY_DATA = "SET_IS_LOADING_CITY_DATA";
 export const ACTION_SET_IS_DATE_SELECTOR_VISIBLE =
   "SET_IS_DATE_SELECTOR_VISIBLE";
 export const ACTION_SET_HIGH_SPEED = "SET_HIGH_SPEED";
-
+export const ACTION_SET_DEPART_DATE = "SET_DEPART_DATE";
 export function setFrom(from) {
   return {
     type: ACTION_SET_FROM,
@@ -95,11 +95,13 @@ export function exchangeFromTo() {
     dispatch(setTo(from));
   };
 }
-// export function showDepartDate(departDate){
-//   return {
-//     type:AC
-//   }
-// }
+export function setDepartDate(departDate) {
+  return {
+    type: ACTION_SET_DEPART_DATE,
+    payload: departDate
+  };
+}
+
 export function fetchCityData() {
   return (dispatch, getState) => {
     const { isLoadingCityData } = getState();

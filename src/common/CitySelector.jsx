@@ -64,7 +64,7 @@ CityList.propTypes = {
   toAlpha: PropTypes.func.isRequired
 };
 const AlphaIndex = memo(function AlphaIndex(props) {
-  const { alpha, onClick, toAlpha } = props;
+  const { alpha, onClick } = props;
   return (
     <i className="city-index-item" onClick={() => onClick(alpha)}>
       {alpha}

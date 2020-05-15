@@ -6,7 +6,8 @@ import {
   ACTION_SET_CITY_DATA,
   ACTION_SET_IS_LOADING_CITY_DATA,
   ACTION_SET_IS_DATE_SELECTOR_VISIBLE,
-  ACTION_SET_HIGH_SPEED
+  ACTION_SET_HIGH_SPEED,
+  ACTION_SET_DEPART_DATE
 } from "./actions";
 export default {
   from(state = "北京", action) {
@@ -79,6 +80,16 @@ export default {
         return payload;
       default:
     }
+    return state;
+  },
+  departDate(state = Date.now(), action) {
+    const { type, payload } = action;
+    switch (type) {
+      case ACTION_SET_DEPART_DATE:
+        return payload;
+      default:
+    }
+
     return state;
   }
 };
