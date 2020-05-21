@@ -178,7 +178,7 @@ function App(props) {
         prev={prev}
         next={next}
       />
-      <List list={trainList} />
+      <List list={trainList} departDate={departDate} />
       <Bottom
         highSpeed={highSpeed}
         orderType={orderType}

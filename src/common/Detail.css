@@ -50,6 +50,7 @@
   white-space: nowrap;
   position: relative;
   top: 5px;
+  padding: 20px 0 0 0;
 }
 
 .detail .content .train-mid {
