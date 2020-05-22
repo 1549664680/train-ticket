@@ -29,7 +29,7 @@ import {
   toggleIsScheduleVisible
 } from "./actions";
 
-const Schedule = lazy(() => import("./Schedule.jsx")); //异步引入 使用Suspentse包裹起来
+const Schedule = lazy(() => import("./Schedule.jsx"));
 
 function App(props) {
   const {
@@ -133,6 +133,8 @@ function App(props) {
         />
       </div>
       <div className="detail-wrapper">
+        <div>s</div>
+        <div>s</div>
         <Detail
           departDate={departDate}
           arriveDate={arriveDate}
@@ -142,8 +144,16 @@ function App(props) {
           departStation={departStation}
           arriveStation={arriveStation}
           durationStr={durationStr}
-          dispatch={dispatch}
-        />
+        >
+          <span className="left"></span>
+          <span
+            className="schedule"
+            onClick={() => detailCbs.toggleIsScheduleVisible()}
+          >
+            时刻表
+          </span>
+          <span className="right"></span>
+        </Detail>
       </div>
       <TrainContext.Provider
         value={{
